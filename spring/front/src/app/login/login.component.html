@@ -1,0 +1,10 @@
+<h1>Login</h1>
+<hr>
+Korisnicko ime: <input type="text" [(ngModel)]="korisnicko_ime">
+Lozinka: <input type="password" [(ngModel)]="lozinka">
+Tip: <select name="tip" [(ngModel)]="tip">
+    <option value="kupac">Kupac</option>
+    <option value="prodavac">Prodavac</option>
+</select>
+<button (click)="login()">Prijavi se</button>
+<span class="crvena">{{message}}</span>

@@ -1,0 +1,11 @@
+<h1>Stranica za prijavljivanje</h1>
+<hr>
+Username: <input type="text" [(ngModel)]="username">
+<br/>
+Password: <input type="password" [(ngModel)]="password">
+<br/>
+Administrator: <input type="checkbox" [(ngModel)]="admin">
+<br/>
+<button (click)="login()">Login</button>
+
+<span class="crvena">{{poruka}}</span>

@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Pocetak</th>
+        <th>Kraj</th>
+    </tr>
+    <tr *ngFor = "let a of aukcije" [class.crvena] = "a.istekle == true" [class.zelena] = "a.istekle == false">
+        <td>{{a.naziv}}</td>
+        <td>{{a.pocetak | date}}</td>
+        <td>{{a.kraj | date}}</td>
+    </tr>
+</table>

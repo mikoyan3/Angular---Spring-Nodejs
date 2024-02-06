@@ -1,0 +1,14 @@
+<table border="solid">
+    <tr>
+        <th>Naziv</th>
+        <th>Kolicina</th>
+        <th>Ukloni</th>
+    </tr>
+    <tr *ngFor = "let p of proizvodi; let i = index">
+        <td>{{p.naziv}}</td>
+        <td>{{kolicina[i]}}</td>
+        <td><button (click)="ukloni(i)">Ukloni</button></td>
+    </tr>
+</table>
+
+<button (click)="naruci()">Naruci</button>

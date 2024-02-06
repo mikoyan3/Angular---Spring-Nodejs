@@ -1,0 +1,26 @@
+<h1>Prodavac dashboard</h1>
+<hr>
+<table border="solid">
+    <tr *ngFor="let n of narudzbine" [class.crvena]="n.kolicina >= 20" [class.zelena]="n.kolicina <= 2">
+        <td>{{n.idN}}</td>
+        <td>{{n.kupac}}</td>
+        <td *ngFor="let p of n.proizvodi">{{p.naziv}} - {{p.kolicina}}</td>
+        <td>{{n.racun}}</td>
+    </tr>
+</table>
+
+<hr>
+<h1>Proizvodi</h1>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Stanje</th>
+        <th>Kolicina za dodavanje</th>
+    </tr>
+    <tr *ngFor = "let p of proizvodi; let i = index">
+        <td>{{p.naziv}}</td>
+        <td>{{p.stanje}}</td>
+        <td><input type="number" [(ngModel)]="kolicina[i]"></td>
+    </tr>
+</table>
+<button (click)="dodaj()">Akcija</button>

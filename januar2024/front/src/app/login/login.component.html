@@ -1,0 +1,6 @@
+Username: <input type="text" [(ngModel)]="username">
+Password: <input type="password" [(ngModel)]="password">
+Kupac: <input type="radio" name="radio" [(ngModel)]="tip" value="kupac">
+Prodavac: <input type="radio" name="radio" [(ngModel)]="tip" value="prodavac">
+<button (click)="login()">Login</button>
+{{message}}

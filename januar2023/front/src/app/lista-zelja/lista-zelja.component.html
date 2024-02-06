@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Cena</th>
+        <th>Kupio</th>
+        <th>Kupi</th>
+        <th>Kupi anonimno</th>
+    </tr>
+    <tr *ngFor = "let o of objekti" [class.crvena] = "o.kupio != null" [class.zelena] = "logged.naStanju >= o.cena && o.kupio == null">
+        <td>{{o.proizvod}}</td>
+        <td>{{o.cena}}</td>
+        <td>{{o.kupio!=null ? o.kupio : 'anonimno'}}</td>
+        <td><button [class.hidden] = "o.kupio != null" (click)="kupi(o)">Kupi</button></td>
+        <td><button [class.hidden] = "o.kupio != null" (click)="kupiAnonimno(o)">Kupi anonimno</button></td>
+    </tr>
+</table>
+
+<button (click)="nazad()">Nazad</button>

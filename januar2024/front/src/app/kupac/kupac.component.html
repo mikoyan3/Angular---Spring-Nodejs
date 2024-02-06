@@ -1,0 +1,26 @@
+{{korisnik.ime}} - {{korisnik.prezime}} - {{korisnik.mejl}}
+
+<table border="solid">
+    <tr>
+        <th>Naziv</th>
+        <th>Pocetak</th>
+        <th>Kraj</th>
+    </tr>
+    <tr *ngFor="let a of aukcije">
+        <td><button (click)="dohvatiUmetnine(a)">{{a.naziv}}</button></td>
+        <td>{{a.pocetak | date}}</td>
+        <td>{{a.kraj | date}}</td>
+    </tr>
+</table>
+<hr>
+{{message}}
+<table border="solid">
+    <tr>
+        <th>Naziv</th>
+        <th>Cena</th>
+    </tr>
+    <tr *ngFor = "let u of umetnine">
+        <td>{{u.naziv}}</td>
+        <td>{{u.ponuda}}</td>
+    </tr>
+</table>

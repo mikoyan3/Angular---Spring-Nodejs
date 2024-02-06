@@ -1,0 +1,14 @@
+<h1>Vodja dashboard</h1>
+<hr>
+<table border="solid">
+    <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Obavljeni zadaci</th>
+    </tr>
+    <tr *ngFor = "let c of clanovi; let i = index" [class.zelena]="obavljeni[i]>0">
+        <td>{{c.ime}}</td>
+        <td>{{c.prezime}}</td>
+        <td>{{obavljeni[i]}}</td>
+    </tr>
+</table>

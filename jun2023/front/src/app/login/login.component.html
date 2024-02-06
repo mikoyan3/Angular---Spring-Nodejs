@@ -1,0 +1,12 @@
+<h1>Login</h1>
+<hr>
+Username: <input type="text" [(ngModel)]="username">
+<br>
+Password: <input type="password" [(ngModel)]="password">
+<br>
+Clan: <input type="radio" value="clan" [(ngModel)]="clan">
+Vodja: <input type="radio" value="vodja" [(ngModel)]="vodja">
+<br>
+<button (click)="login()">Login</button>
+<br>
+{{message}}

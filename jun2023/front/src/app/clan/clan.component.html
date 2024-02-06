@@ -1,0 +1,53 @@
+Sadrzaj zadatka: <input type="text" [(ngModel)]="sadrzaj">
+Clan tima: 
+<select [(ngModel)]="clanTima">
+    <option *ngFor = "let c of clanovi" value="{{c.korisnicko_ime}}">{{c.ime}} {{c.prezime}}</option>
+</select>
+<button (click)="dodajZadatak()">Dodaj zadatak</button>
+<hr>
+<h1>Moji zadaci</h1>
+<br>
+<h3>Licni</h3>
+<table border="solid">
+    <tr>
+        <th>Sadrzaj</th>
+        <th>Obavljen</th>
+        <th>Odradi</th>
+        <th>Obrisi</th>
+    </tr>
+    <tr *ngFor = "let l of licni">
+        <td>{{l.sadrzaj}}</td>
+        <td>{{l.obavljen}}</td>
+        <td><input type="checkbox" (change)="obavi(l)"></td>
+        <td><button (click)="obrisi(l)">Obrisi</button></td>
+    </tr>
+</table>
+<br>
+<h3>Delegirani</h3>
+<table border="solid">
+    <tr>
+        <th>Sadrzaj</th>
+        <th>Obavljen</th>
+        <th>Obavi</th>
+    </tr>
+    <tr *ngFor = "let d of delegirani">
+        <td>{{d.sadrzaj}}</td>
+        <td>{{d.obavljen}}</td>
+        <td><input type="checkbox" (change)="obavi(d)"></td>
+        <td><button (click)="obrisi(d)">Obrisi</button></td>
+    </tr>
+</table>
+<br>
+<h3>Obavljeni</h3>
+<table border="solid">
+    <tr>
+        <th>Sadrzaj</th>
+        <th>Kategorija</th>
+        <th>Neobavi</th>
+    </tr>
+    <tr *ngFor = "let o of obavljeni">
+        <td>{{o.sadrzaj}}</td>
+        <td>{{o.tip}}</td>
+        <td><button (click)="neobavi(o)">Vracanje</button></td>
+    </tr>
+</table>

@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Cena</th>
+        <th>Nova ponuda</th>
+        <th>Potvrdi</th>
+    </tr>
+    <tr *ngFor = "let u of umetnine">
+        <td>{{u.naziv}}</td>
+        <td>{{u.ponuda}}</td>
+        <td><input type="number" [(ngModel)]="ponuda"></td>
+        <td><button (click)="potvrdi(u)">Potvrdi</button></td>
+    </tr>
+</table>
+{{message}}

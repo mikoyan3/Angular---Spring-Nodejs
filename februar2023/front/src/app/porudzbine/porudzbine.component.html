@@ -1,0 +1,20 @@
+<h1>LISTA PORUDZBINA</h1>
+<hr>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Cena</th>
+        <th>Stanje</th>
+        <th>Kolicina koju zelite da porucite</th>
+    </tr>
+    <tr *ngFor="let p of listaProizvoda; let i = index">
+        <td>{{p.naziv}}</td>
+        <td>{{p.cena}}</td>
+        <td>{{p.stanje}}</td>
+        <td><input type="number" [(ngModel)]="kolicina[i]"></td>
+    </tr>
+    <tr colspan="3">
+        <tfoot align="center"><button (click)="kupi()">Gotovo</button></tfoot>
+    </tr>
+</table>
+{{message}}

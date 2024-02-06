@@ -1,0 +1,16 @@
+<button (click)="odjaviSe()">Odjavi se</button>
+
+<hr>
+<table>
+    <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Potroseno</th>
+    </tr>
+    <tr *ngFor = "let k of korisnici">
+        <td>{{k.ime}}</td>
+        <td>{{k.prezime}}</td>
+        <td>{{k.potroseno}}</td>
+        <td [class.hidden] = "k.naStanju < 5000"><button (click)="uplati(k)">Uplati 5000</button></td>
+    </tr>
+</table>

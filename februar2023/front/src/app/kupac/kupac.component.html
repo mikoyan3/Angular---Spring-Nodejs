@@ -1,0 +1,22 @@
+<h1>Kupac</h1>
+<hr>
+{{logged.ime}} {{logged.prezime}} {{logged.mejl}}
+<br>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Kategorija</th>
+        <th>Cena</th>
+        <th>Stanje</th>
+    </tr>
+    <tr *ngFor="let p of proizvodi">
+        <td>{{p.naziv}}</td>
+        <td>{{p.kategorija}}</td>
+        <td>{{p.cena}}</td>
+        <td>{{p.stanje}}</td>
+        <td><input type="checkbox" (click)="dodajUListu(p)" [disabled]="p.stanje==0"></td>
+    </tr>
+</table>
+<button (click)="poruci()">Poruci</button>
+<br>
+{{message}}

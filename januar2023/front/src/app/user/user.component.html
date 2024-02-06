@@ -1,0 +1,29 @@
+<button (click)="odjaviSe()">Odjavi se</button>
+<br>
+<h1>Korisnik</h1>
+<hr>
+<table>
+    <tr>
+        <th>Ime</th>
+        <th>Cena</th>
+        <th>Kupio</th>
+    </tr>
+    <tr *ngFor = "let o of objekti">
+        <td>{{o.proizvod}}</td>
+        <td>{{o.cena}}</td>
+        <td>{{o.kupio!=null ? o.kupio : 'anonimno'}}</td>
+    </tr>
+</table>
+<hr>
+<h1>Forma za dodavanje novog proizvoda</h1>
+<br>
+Naziv proizvoda: <input type="text" [(ngModel)]="naziv">
+<br>
+Cena: <input type="number" [(ngModel)]="cena">
+<br>
+<button (click)="dodaj()">Dodaj proizvod</button>
+<hr>
+<select [(ngModel)]="korisnik">
+    <option *ngFor = "let k of korisnici" value="{{k.korisnickoIme}}">{{k.korisnickoIme}}</option>
+</select>
+<button (click)="vidiListu()">Vidi listu</button>

@@ -1,0 +1,20 @@
+Ime: {{korisnik.ime}}
+Prezime: {{korisnik.prezime}}
+Datum rodjenja: {{korisnik.datum_rodjenja}}
+<table border = 'solid'>
+    <tr>
+        <th>Kupac</th>
+        <th>Datum</th>
+        <th>Proizvodi</th>
+    </tr>
+    <tr *ngFor = "let n of narudzbine">
+        <td>{{n.kupac}}</td>
+        <td>{{n.datum}}</td>
+        <td>
+            <span *ngFor="let p of n.proizvodi"> {{ p}},  </span>
+        </td>
+    </tr>
+</table>
+
+<hr>
+<h1>Najverniji kupac: {{najverniji.kor_ime}}</h1>

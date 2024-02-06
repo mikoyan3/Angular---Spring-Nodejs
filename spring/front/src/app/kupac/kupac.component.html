@@ -1,0 +1,21 @@
+<table border="solid">
+    <tr>
+        <th>Naziv</th>
+        <th>Opis</th>
+        <th>Cena</th>
+        <th>Promocija</th>
+        <th>CheckBox</th>
+        <th>Kolicina</th>
+    </tr>
+    <tr *ngFor = "let p of proizvodi; let i = index" [class.zelena]="p.promocija == 1">
+        <td>{{p.naziv}}</td>
+        <td>{{p.opis}}</td>
+        <td>{{p.cena}}</td>
+        <td>{{p.promocija}}</td>
+        <td><input type="checkbox" [(ngModel)]="checkbox[i]"></td>
+        <td><input type="number" [(ngModel)]="kolicina[i]"></td>
+    </tr>
+</table>
+<button (click)="naruci()">Naruci</button>
+<br>
+{{message}}
